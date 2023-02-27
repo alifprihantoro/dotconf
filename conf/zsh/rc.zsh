@@ -24,9 +24,9 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
 # prom shell
 MYZSHPLUG=$dc/conf/zsh/plugins
-# source $MYZSHPLUG/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# source $MYZSHPLUG/.p11k.zsh
+[[ ! -f $MYZSHPLUG/p10k.zsh ]] || source $MYZSHPLUG/p10k.zsh
 source $MYZSHPLUG/zsh-vi-mode.plugin.zsh
 source $MYZSHPLUG/autopair.zsh
 source $MYZSHPLUG/syntax-hilight/fast-syntax-highlighting.plugin.zsh
