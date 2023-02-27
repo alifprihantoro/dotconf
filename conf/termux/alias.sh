@@ -9,4 +9,4 @@ catc () {
 catp () {
   cat $1 >> $2
 }
-alias u='proot-distro login ubuntu --termux-home --shared-tmp -- zsh'
+alias u='proot-distro login debian'
