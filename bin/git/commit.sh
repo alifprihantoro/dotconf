@@ -1,6 +1,6 @@
 function gsv(){
-MYGSV
-cd $DIRNOW
+  MYGSV
+  cd $DIRNOW
 }
 # amend (change last commit)
 alias gsvm='

@@ -19,3 +19,5 @@ alias tc='touch'
 alias q='exit -y'
 #alias ubun='~/ubuntu/./su.sh'
 alias cdr='cd -'
+alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
