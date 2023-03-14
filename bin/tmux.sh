@@ -3,14 +3,14 @@ function tmuxm(){
   local VIM="$LOC && v"
   local COMPILE="$LOC && yarn dev"
   tmux new-session  \; \
-    rename-session 'editor muryp'  \; \
+    rename-session 'muryp1'  \; \
     send-keys $VIM C-m  \; \
     rename-window 'editor'  \; \
     new-window  \; \
     rename-window 'issue'  \; \
     send-keys $VIM C-m  \; \
     new-session  \; \
-    rename-session 'other muryp'  \; \
+    rename-session 'muryp2'  \; \
     rename-window 'debian'  \; \
     send-keys 'u' C-m  \; \
     new-window  \; \

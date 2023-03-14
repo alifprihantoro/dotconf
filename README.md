@@ -1,3 +1,5 @@
+# CLI CONFIG
+Ini adalah repo konfigurasi yang berisi file-file konfigurasi untuk beberapa program seperti Bash, Zsh, Termux, Tmux, Fzf, dan Git. Setiap file disimpan dalam format tertentu dan dapat digunakan dengan program yang sesuai. Anda dapat menggunakan repo ini dengan cara clone repositori ke dalam direktori lokal, kemudian salin dan sesuaikan file konfigurasi ke dalam lokasi yang sesuai untuk masing-masing program. Konfigurasi akan membantu membuat penggunaan program-program tersebut menjadi lebih mudah dan efisien.
 ## install 
 ### clone repo
 ```bash
