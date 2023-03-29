@@ -4,9 +4,9 @@ zzz=$dr/zzz
 # db=$dc/bash
 dssh=$dr.ssh
 dw=$dr/web
-dm=$dw/muryp-new
-dvp=$dr.config/plugin
-dv=$dvp/nvim-conf
+dm=$dw/muryp
+dvp=$dr/.local/share/nvim/site/pack/packer/
+dv=$dr/.config/nvim
 
 alias dr='cd $dr'
 alias zzz='cd $zzz'
