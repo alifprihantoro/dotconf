@@ -1,4 +1,4 @@
-LIST_CMD+=('change file by ext => vf')
+LIST_CMD+=('change file by ext => changeFileName')
 function changeFileName(){
   read "EXT_BEFORE? Extention want to change : "
   read "EXT_AFTER? Extention want to change : "
