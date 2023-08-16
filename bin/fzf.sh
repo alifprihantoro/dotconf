@@ -7,44 +7,49 @@ $1 $vim_w_fzf
 break
 done
 }
-# lvim
-alias vf='FILEFUZZY nvim'
-# nvim
-alias nvf='FILEFUZZY nvim'
-# nvim
-alias lvf='FILEFUZZY nvim'
-vfb (){
+LIST_CMD+=('fzf open with nvim => vf')
+vf(){
+  FILEFUZZY nvim
+}
+LIST_CMD+=('find dir by .ext => vfe')
+vfe(){
 vim_w_fzf=$(find *.$1 -type f | fzf > selected)
 while [ "$vim_w_fzf" != "" ]
 do 
 nvim $vim_w_fzf
 break
 done
-
 }
-alias cf='
-cd_w_fzf=$(find * -type d | fzf)
-while [ "$cd_w_fzf" != "" ]
-do 
-cd $cd_w_fzf
-break
-done
+LIST_CMD+=('fzf cd folder => cf')
+cf(){
+  cd_w_fzf=$(find * -type d | fzf)
+  while [ "$cd_w_fzf" != "" ]
+  do 
+  cd $cd_w_fzf
+  break
+  done
+}
+LIST_CMD+=('find project => cfp')
+# split with ' => '
+cfp(){
+  local LIST_PROJECT=(
+    "Muryp => $dm"
+    "public project => $dp/public"
+    "nvim git => $dp/public/nvim-muryp-git"
+    "router dom => $dp/public/router-dom"
+    "notes => $dp/notes"
+  )
+  # transform array to string
+  LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
+  local Dir="$(echo $(echo $LIST_PROJECT | fzf) | awk -F' => ' '{print $2}')"
+  cd $Dir
+}
+LIST_CMD+=('fzf list git => cfg')
+alias cfg='
+cd $(find ~/. -type d -name .git -prune -exec dirname {} \; | fzf)
 '
-# fzf
-alias wlf='
-dwl
-vf
-'
-alias wdf='
-dwd
-vf
-'
-alias wdof='
-dwdo
-vf
-'
-
-alias wpf='
-dwp
-vf
-'
+fcmd(){
+  local LIST_CMD=$(printf '%s\n' "${LIST_CMD[@]}")
+  local CMD="$(echo $(echo $LIST_CMD | fzf) | awk -F' => ' '{print $2}')"
+  $CMD
+}
