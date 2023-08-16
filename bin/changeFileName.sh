@@ -1,5 +1,5 @@
-function changeFile(){
-  for f in $(find ~/.myconf/**/*.wiki); do 
-    mv $f $(echo $f | sed -e 's/\.wiki//g').md
+function changeFileName(){
+  for f in $(find *.$1); do 
+    mv $f $(echo $f | sed -e 's/\.wiki//g').$1
   done
 }
