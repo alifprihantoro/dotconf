@@ -3,7 +3,8 @@ cd $(git rev-parse --show-toplevel)'
 zzz=$dr/zzz
 # db=$dc/bash
 dssh=$dr.ssh
-dw=$dr/project/web
+dp=$dr/project
+dw=$dp/web
 dm=$dw/muryp
 dvp=$dr/.local/share/nvim/site/pack/packer/
 dv=$dr/.config/nvim
