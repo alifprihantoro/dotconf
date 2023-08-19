@@ -21,3 +21,4 @@ alias q='exit -y'
 alias cdr='cd -'
 alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+LIST_CMD+=('link folder => echo "ln -s"')

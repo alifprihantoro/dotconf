@@ -38,6 +38,7 @@ cfp(){
     "nvim git => $dp/public/nvim-muryp-git"
     "router dom => $dp/public/router-dom"
     "notes => $dp/notes"
+    "nvim md => $dp/public/nvim-muryp-md"
   )
   # transform array to string
   LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
