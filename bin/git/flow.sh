@@ -1,9 +1,3 @@
-## ===== gitflow
-# add branch flow
-alias gbf='
-gb develop
-gb hotfix
-'
 #git flow start
 alias gfs='
 owhbrnch=$(git symbolic-ref --short HEAD)
@@ -12,6 +6,7 @@ deleteStar=$thisBranchName:s/*/\
 gc $(echo $deleteStar:s/^\ \ / | fzf)
 gm $owhbrnch
 '
+## ===== gitflow
 # for start fiture use gfs
 #git end fitur
 alias gfe='

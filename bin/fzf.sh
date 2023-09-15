@@ -32,14 +32,6 @@ cf(){
 LIST_CMD+=('find project => cfp')
 # split with ' => '
 cfp(){
-  local LIST_PROJECT=(
-    "Muryp => $dm"
-    "public project => $dp/public"
-    "nvim git => $dp/public/nvim-muryp-git"
-    "router dom => $dp/public/router-dom"
-    "notes => $dp/notes"
-    "nvim md => $dp/public/nvim-muryp-md"
-  )
   # transform array to string
   LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
   local Dir="$(echo $(echo $LIST_PROJECT | fzf) | awk -F' => ' '{print $2}')"
@@ -52,5 +44,5 @@ cd $(find ~/. -type d -name .git -prune -exec dirname {} \; | fzf)
 fcmd(){
   local LIST_CMD=$(printf '%s\n' "${LIST_CMD[@]}")
   local CMD="$(echo $(echo $LIST_CMD | fzf) | awk -F' => ' '{print $2}')"
-  $CMD
+  eval $CMD
 }

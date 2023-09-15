@@ -1,8 +1,6 @@
 # ===== Git bassic
 #init
 alias gi='git init'
-# rebase
-alias gre='git rebase'
 # clone
 alias gcl='git clone'
 

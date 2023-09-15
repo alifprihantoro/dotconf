@@ -19,3 +19,12 @@ alias dw='cd $dw'
 alias dm='cd $dm'
 alias dvc='cd $dvc'
 alias dvp='cd $dvp'
+LIST_PROJECT=(
+    "Muryp => $dm"
+    "public project => $dp/public"
+    "nvim git => $dp/public/nvim-muryp-git"
+    "router dom => $dp/public/router-dom"
+    "notes => $dp/notes"
+    "nvim md => $dp/public/nvim-muryp-md"
+    "leetcode => $dp/leetcode"
+  )
