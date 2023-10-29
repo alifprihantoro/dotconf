@@ -27,4 +27,6 @@ LIST_PROJECT=(
     "notes => $dp/notes"
     "nvim md => $dp/public/nvim-muryp-md"
     "leetcode => $dp/leetcode"
+    "checklist.nvim => $dp/public/muryp-checklist.nvim"
+    "link.nvim => $dp/public/muryp-link.nvim"
   )
