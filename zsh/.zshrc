@@ -1,4 +1,12 @@
-for sumber_dir in $(find $dc/**/*.sh -type f -not -path 'bash/*' ! -path "*/ubuntu*" ! -path "web*" ! -path "*/oh_my_bash/*" ! -path "*/conf/*"); do
+dr=$HOME/
+dc=$dr.myconf
+
+if [ `uname --operating-system` = "Android" ]; then
+  source $dc/termux/alias.sh
+fi
+
+
+for sumber_dir in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh); do
   source $sumber_dir
 done
 # for change dir whitout cd
@@ -23,7 +31,7 @@ bindkey -v '^?' backward-delete-char
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
 # prom shell
-MYZSHPLUG=$dc/conf/zsh/plugins
+MYZSHPLUG=$dc/zsh/plugins
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $MYZSHPLUG/p10k.zsh ]] || source $MYZSHPLUG/p10k.zsh
@@ -50,3 +58,13 @@ source $MYZSHPLUG/zsh-autosuggestions.zsh
 
 # zsh prompt
 # source $MYZSHPLUG/prompt/main.zsh
+# pnpm
+export PNPM_HOME="$HOME/.pnpm/"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
