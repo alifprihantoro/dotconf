@@ -1,8 +1,8 @@
-# func fuzzy 
+# func fuzzy
 FILEFUZZY(){
 vim_w_fzf=$(FZF --preview)
 while [ "$vim_w_fzf" != "" ]
-do 
+do
 $1 $vim_w_fzf
 break
 done
@@ -15,7 +15,7 @@ LIST_CMD+=('find dir by .ext => vfe')
 vfe(){
 vim_w_fzf=$(find *.$1 -type f | fzf > selected)
 while [ "$vim_w_fzf" != "" ]
-do 
+do
 nvim $vim_w_fzf
 break
 done
@@ -24,7 +24,7 @@ LIST_CMD+=('fzf cd folder => cf')
 cf(){
   cd_w_fzf=$(find * -type d | fzf)
   while [ "$cd_w_fzf" != "" ]
-  do 
+  do
   cd $cd_w_fzf
   break
   done
@@ -45,4 +45,8 @@ fcmd(){
   local LIST_CMD=$(printf '%s\n' "${LIST_CMD[@]}")
   local CMD="$(echo $(echo $LIST_CMD | fzf) | awk -F' => ' '{print $2}')"
   eval $CMD
+}
+
+ghc(){
+  git clone https://github.com/$(gh repo list $1 | fzf | awk '{print $1}')
 }
