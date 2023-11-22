@@ -50,3 +50,12 @@ fcmd(){
 ghc(){
   git clone https://github.com/$(gh repo list $1 | fzf | awk '{print $1}')
 }
+pnf(){
+  local ARG_FIND=package.json
+  local ROOT_DIR=$(findUp $ARG_FIND)
+  local LIST_YML=$(echo $(yq ".scripts | keys | .[]" $ROOT_DIR/$ARG_FIND -o=y) | tr ' ' '\n')
+  local DIR=$(echo $LIST_YML | fzf)
+  if [ ! -z "$DIR" ]; then
+    pnpm $DIR
+  fi
+}
