@@ -95,8 +95,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ### openbox
 copy `conf/openbox` in ~/.config/
 
-### debian
+### debian/linux
 ```bash
+# use /home/user if your root direrctory is that
 dr=/data/data/com.termux/files/home
 dc=$dr/.myconf
 source $dc/conf/bash/rc.bash

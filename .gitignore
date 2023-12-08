@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 termux/shell
+.pnpm
