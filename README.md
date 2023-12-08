@@ -3,7 +3,7 @@ Ini adalah repo konfigurasi yang berisi file-file konfigurasi untuk beberapa pro
 
 > Note : dianjurkan sudah menguasai bash, zsh. Karena prefensi ini ditujukan untuk pribadi
 
-## install 
+## install
 ### clone repo
 ```bash
 git clone --depth=1 https://github.com/muryp/cli-config
@@ -21,7 +21,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```bash
 apk update -y
 apk upgrade -y
-apk install bat nodejs neovim python gh git wget openssh zsh lsd fzf tmux ripgrep termux-api proot proot-distro
+apk install bat nodejs neovim python gh git wget openssh zsh lsd fzf tmux ripgrep termux-api proot proot-distro yq postgresql
 ```
 
 #### npm
@@ -95,8 +95,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ### openbox
 copy `conf/openbox` in ~/.config/
 
-### debian
+### debian/linux
 ```bash
+# use /home/user if your root direrctory is that
 dr=/data/data/com.termux/files/home
 dc=$dr/.myconf
 source $dc/conf/bash/rc.bash
