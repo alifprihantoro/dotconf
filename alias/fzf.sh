@@ -34,7 +34,7 @@ LIST_CMD+=('find project => cfp')
 cfp(){
   # transform array to string
   LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
-  local DIR="$(echo $(echo $LIST_PROJECT | fzf) | awk -F' => ' '{print $2}')"
+  local DIR=$(echo "$LIST_PROJECT" | fzf | awk -F' => ' '{print $2}')
   if [ ! -z "$DIR" ]; then
     local CMD="cd $DIR"
     addHistory $CMD
