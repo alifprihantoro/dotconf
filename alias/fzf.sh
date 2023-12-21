@@ -34,8 +34,12 @@ LIST_CMD+=('find project => cfp')
 cfp(){
   # transform array to string
   LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
-  local Dir="$(echo $(echo $LIST_PROJECT | fzf) | awk -F' => ' '{print $2}')"
-  cd $Dir
+  local DIR="$(echo $(echo $LIST_PROJECT | fzf) | awk -F' => ' '{print $2}')"
+  if [ ! -z "$DIR" ]; then
+    local CMD="cd $DIR"
+    addHistory $CMD
+    eval $CMD
+  fi
 }
 LIST_CMD+=('fzf list git => cfg')
 alias cfg='
@@ -53,8 +57,10 @@ ghc(){
 pnf(){
   local ARG_FIND=package.json
   local ROOT_DIR=$(findUp $ARG_FIND)
-  local DIR=$(echo "$(yq '.scripts | keys | .[]' $ROOT_DIR/$ARG_FIND -o=y)" | fzf)
-  if [ ! -z "$DIR" ]; then
-    pnpm $DIR
+  local CMD=$(echo "$(yq '.scripts | keys | .[]' $ROOT_DIR/$ARG_FIND -o=y)" | fzf)
+  if [ ! -z "$CMD" ]; then
+    local CMD="pnpm $CMD"
+    addHistory $CMD
+    eval $CMD
   fi
 }

@@ -1,4 +1,4 @@
-function add_to_history() {
+function addHistory() {
     if [ -n "$BASH_VERSION" ]; then
         history -s "$1"
     elif [ -n "$ZSH_VERSION" ]; then
