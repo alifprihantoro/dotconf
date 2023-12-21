@@ -29,4 +29,5 @@ LIST_PROJECT=(
     "leetcode => $dp/leetcode"
     "lazy nvim => $dv/lazy"
     "alifprihantoro => $dw/web"
+    "lab => $dp/lab"
   )
