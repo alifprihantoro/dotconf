@@ -53,6 +53,16 @@ apt install chromium firefox-esr tigervnc-standalone-server tigervnc-common xfe4
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
+### wordpress
+```bash
+# install wp cli, php, mariadb
+wp_install
+# setup db for wp
+wp_setup_db <db_name> <username> <passwd>
+# serve project
+wp_start
+```
+
 ## config
 
 ### zshrc
