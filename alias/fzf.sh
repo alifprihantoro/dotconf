@@ -22,12 +22,16 @@ done
 }
 LIST_CMD+=('fzf cd folder => cf')
 cf(){
-  cd_w_fzf=$(find * -type d | fzf)
-  while [ "$cd_w_fzf" != "" ]
-  do
-  cd $cd_w_fzf
-  break
-  done
+  local list_dir=$(find . -maxdepth 1 -type d -name "*" -print)
+  local cd_w_fzf=$(echo "$list_dir\n.." | fzf)
+  if [ ! -z "$cd_w_fzf" ]; then
+    if [ "$cd_w_fzf" = "." ]; then
+      echo "you're in $(pwd)"
+    else
+      cd $cd_w_fzf
+      cf
+    fi
+  fi
 }
 LIST_CMD+=('find project => cfp')
 # split with ' => '
