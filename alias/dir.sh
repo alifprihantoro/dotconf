@@ -26,8 +26,9 @@ LIST_PROJECT=(
     "router dom => $dp/public/router-dom"
     "notes => $dp/notes"
     "nvim md => $dp/public/nvim-muryp-md"
-    "leetcode => $dp/leetcode"
+    "daily project => $dp/daily"
     "lazy nvim => $dv/lazy"
     "alifprihantoro => $dw/web"
     "lab => $dp/lab"
+    "learn => $dp/learn"
   )
