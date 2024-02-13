@@ -51,15 +51,15 @@ cd $(find ~/. -type d -name .git -prune -exec dirname {} \; | fzf)
 '
 fcmd(){
   local LIST_CMD=$(printf '%s\n' "${LIST_CMD[@]}")
-  local CMD="$(echo $(echo $LIST_CMD | fzf) | awk -F' => ' '{print $2}')"
-  eval $CMD
+  echo $LIST_CMD | fzf
 }
 
+LIST_CMD+=('fzf list repo => ghc <username>')
 ghc(){
   git clone https://github.com/$(gh repo list $1 | fzf | awk '{print $1}')
 }
 
-# find [workspace](workspace)
+LIST_CMD+=('fzf list command pnpm/npm/yarn => pnf')
 pnf(){
   local ARG_FIND=package.json
   local ROOT_DIR=$(findUp $ARG_FIND)
@@ -71,6 +71,7 @@ pnf(){
   fi
 }
 
+LIST_CMD+=('fzf list history => fh')
 fh(){
   local USER_OPTION=$(echo "$(history)" | fzf --tac | sed -e 's/^[[:space:]]*[0-9]\+[[:space:]]*//')
   if [ ! -z "$USER_OPTION" ]; then
@@ -78,6 +79,7 @@ fh(){
   fi
 }
 
+LIST_CMD+=('fzf list help => fhe')
 fhe(){
   local LIST_HELP=$(man -k . | cut -d '(' -f1 | fzf -m --preview 'man {1}')
   nvim -c ":Man $(LIST_HELP)" -c ":only"
