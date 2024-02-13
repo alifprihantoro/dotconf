@@ -23,7 +23,7 @@ done
 LIST_CMD+=('fzf cd folder => cf')
 cf(){
   local list_dir=$(find . -maxdepth 1 -type d -name "*" -print)
-  local cd_w_fzf=$(echo "$list_dir\n.." | fzf)
+  local cd_w_fzf=$(echo -e "$list_dir\n.." | fzf)
   if [ ! -z "$cd_w_fzf" ]; then
     if [ "$cd_w_fzf" = "." ]; then
       echo "you're in $(pwd)"
@@ -58,6 +58,8 @@ fcmd(){
 ghc(){
   git clone https://github.com/$(gh repo list $1 | fzf | awk '{print $1}')
 }
+
+# find [workspace](workspace)
 pnf(){
   local ARG_FIND=package.json
   local ROOT_DIR=$(findUp $ARG_FIND)
@@ -74,4 +76,9 @@ fh(){
   if [ ! -z "$USER_OPTION" ]; then
     eval $USER_OPTION
   fi
+}
+
+fhe(){
+  local LIST_HELP=$(man -k . | cut -d '(' -f1 | fzf -m --preview 'man {1}')
+  nvim -c ":Man $(LIST_HELP)" -c ":only"
 }
