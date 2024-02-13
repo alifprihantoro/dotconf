@@ -45,7 +45,7 @@ proot-distro login debian
 ```bash
 apt update -y
 apt upgrade -y
-apt install chromium firefox-esr tigervnc-standalone-server tigervnc-common xfe4-terminal openbox
+apt install chromium-browser firefox-esr tigervnc-standalone-server tigervnc-common xfce4-terminal openbox man
 ```
 
 #### nvm
