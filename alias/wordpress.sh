@@ -1,12 +1,3 @@
-wp_install(){
-  pkg install php mariadb -y
-  cd ~/
-  curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-  chmod +x wp-cli.phar
-  mv wp-cli.phar ../usr/bin/wp
-  wp --info
-}
-
 wp_setup_db(){
   if [[ "$1" == *help* || "$1" == *-h* ]]; then
     echo "
@@ -47,6 +38,11 @@ then start with wp_start or php -S localhost:8080
   "
 }
 
-wp_start(){
-  php -S localhost:8080
+phps(){
+  local port=$1
+  if [ ! -z "$1" ]; then
+    port=8080
+  fi
+  local CMD='php -S localhost:$port'
+  eval $CMD
 }
