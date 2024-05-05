@@ -67,10 +67,8 @@ mv ~/go/bin/gopls ~/../usr/bin/
 pkg install stylua -y # lua
 pkg install shfmt -y  # bash
 pnpm i -g prettierd   # formatter
-echo "
-#!/bin/sh
-echo "$(cat $1 | /data/data/com.termux/files/home/.pnpm//prettierd $1)"
-" > ~/../usr/bin/astrofm
+echo '#!/bin/sh\necho "$(cat $1 | $PNPM_HOME/prettierd $1)"' >~/../usr/bin/astrofm
+chmod +x ~/../usr/bin/astrofm
 
 # go lsp linter
 go install github.com/nametake/golangci-lint-langserver@latest
