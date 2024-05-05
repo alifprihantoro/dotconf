@@ -14,7 +14,7 @@ git config --global core.editor nvim
 pkg install postgresql mariadb -y
 # install language and related tools
 pkg install nodejs eslint golang rust php composer python python-pip -y
-npm i -g pnpm # install pnpm
+npm i -g pnpm         # install pnpm
 pnpm i -g live-server # tools live server
 # install wordpress
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -34,20 +34,20 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 tic -x $rt/xterm-256color-italic.terminfo
 tic -x $rt/tmux-256color.terminfo
 # setup neovim
-pkg install luarocks luajit stylua lua-language-server
+pkg install luarocks luajit
+luarocks install luacheck
 # install lsp
-pnpm i -g vscode-langservers-extracted # html,css,json
-pnpm i -g typescript # typescript compiler
-pnpm i -g typescript-language-server # lsp js/ts/tsx
-pnpm i -g cssmodules-language-server # css module lsp
-pnpm i -g @astrojs/language-server # astrojs lsp
-pnpm i -g yaml-language-server # yaml lsp
-pnpm i -g bash-language-server # bash lsp
+pnpm i -g vscode-langservers-extracted # html,css,json, eslint
+pnpm i -g typescript                   # typescript compiler
+pnpm i -g typescript-language-server   # lsp js/ts/tsx
+pnpm i -g cssmodules-language-server   # css module lsp
+pnpm i -g @astrojs/language-server     # astrojs lsp
+pnpm i -g yaml-language-server         # yaml lsp
+pnpm i -g bash-language-server         # bash lsp
 pnpm i -g pyright
 pnpm i -g @tailwindcss/language-server # tailwind lsp
-pnpm i -g @mdx-js/language-server # mdx lsp
-pnpm i -g prettier # formatter
-pkg install lua-language-server -y # lsp lua
+pnpm i -g @mdx-js/language-server      # mdx lsp
+pkg install lua-language-server -y     # lsp lua
 # lsp rust
 git clone --depth=1 https://github.com/rust-lang/rust-analyzer.git
 cd rust-analyzer
@@ -62,6 +62,16 @@ mv phpactor.phar ~/../usr/bin/phpactor
 # lsp golang
 go install golang.org/x/tools/gopls@latest
 mv ~/go/bin/gopls ~/../usr/bin/
+
+# install formatter
+pkg install stylua -y # lua
+pkg install shfmt -y  # bash
+pnpm i -g prettierd   # formatter
+echo "
+#!/bin/sh
+echo "$(cat $1 | /data/data/com.termux/files/home/.pnpm//prettierd $1)"
+" > ~/../usr/bin/astrofm
+
 # go lsp linter
 go install github.com/nametake/golangci-lint-langserver@latest
 mv ~/go/bin/golangci-lint-langserver ~/../usr/bin/
