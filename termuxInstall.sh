@@ -23,13 +23,15 @@ mv wp-cli.phar ~/../usr/bin/wp
 
 local r=.myconf
 rt=$r/tmux/
+# setup zsh
+chsh -s zsh
 ln -s $r/zsh/.zshrc
+# end zsh
 ln -s $r/bash/.bashrc
 ln -s $rt.tmux.conf
 rm -rf .termux
 ln -s $r/termux
 mv termux .termux
-chsh -s zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 tic -x $rt/xterm-256color-italic.terminfo
 tic -x $rt/tmux-256color.terminfo

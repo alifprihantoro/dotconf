@@ -52,12 +52,14 @@ AUTOPAIR_RBOUNDS=(all '[[{(<,.:?/%$!a-zA-Z0-9]')
 AUTOPAIR_RBOUNDS+=(quotes '[a-zA-Z0-9]')
 AUTOPAIR_RBOUNDS+=(spaces '[^]})]')
 AUTOPAIR_RBOUNDS+=(braces '')
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # zsh autocomplete
 source $MYZSHPLUG/zsh-autosuggestions.zsh
 
-# zsh prompt
-# source $MYZSHPLUG/prompt/main.zsh
+# ENV
 # pnpm
 export PNPM_HOME="$HOME/.pnpm/"
 case ":$PATH:" in
@@ -65,6 +67,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin/

@@ -31,6 +31,6 @@ LIST_PROJECT=(
   "alifprihantoro => $dw/alifprihantoro"
   "lab => $dp/lab"
   "learn => $dp/learn"
-  "content => $dw/alifprihantoro/contents"
   "old content => $dp/content"
+  "content => $dw/alifprihantoro/contents"
 )
