@@ -1,6 +1,6 @@
 apt update -y
 apt upgrade -y
-apt install chromium firefox-esr tigervnc-standalone-server tigervnc-common xfce4-terminal openbox
+apt install chromium firefox-esr tigervnc-standalone-server tigervnc-common xfce4-terminal openbox jgmenu
 
 # setup configs
 mkdir .config

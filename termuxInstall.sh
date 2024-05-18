@@ -3,7 +3,10 @@ rm ../usr/etc/motd
 pkg update -y
 pkg upgrade -y
 # install cli tools
-pkg install bat gh git openssh zsh lsd fzf tmux ripgrep termux-api yq which make man aria2 htop -y
+pkg install bat gh git zsh lsd fzf tmux ripgrep termux-api yq which make man aria2 htop -y
+# security apps
+pkg openssh
+go install github.com/google/osv-scanner/cmd/osv-scanner@main # use main because latest ver. have bug for pnpm
 # add glibc
 pacman -S glibc-runner
 # setup git
