@@ -265,9 +265,14 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
+    <keybind key="A-Tab">
       <action name="ShowMenu">
-        <menu>client-menu</menu>
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="A-s">
+      <action name="Execute">
+        <command>jgmenu_run</command>
       </action>
     </keybind>
     <!-- terminal -->
@@ -289,7 +294,7 @@
       </action>
     </keybind>
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
-    <keybind key="A-s">
+    <keybind key="A-S">
       <action name="Execute">
         <command>scrot -s</command>
       </action>
