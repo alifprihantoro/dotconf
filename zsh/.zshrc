@@ -11,6 +11,7 @@ for sumber_dir in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh); do
 done
 # for change dir whitout cd
 setopt auto_cd
+echo -ne "\033]12;#4a53f0\007" # color
 # autocomplete
 autoload -Uz compinit
 compinit
