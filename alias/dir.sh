@@ -15,6 +15,7 @@ alias dc='cd $dc'
 alias db='cd $db'
 alias dv='cd $dv'
 alias dssh='cd $dssh'
+alias dp='cd $dp'
 alias dw='cd $dw'
 alias dm='cd $dm'
 alias dvc='cd $dvc'
@@ -31,6 +32,5 @@ LIST_PROJECT=(
   "alifprihantoro => $dw/alifprihantoro"
   "lab => $dp/lab"
   "learn => $dp/learn"
-  "old content => $dp/content"
   "content => $dw/alifprihantoro/contents"
 )
