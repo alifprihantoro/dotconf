@@ -3,13 +3,14 @@ alias openb='termux-open-url '
 alias pbcopy='termux-clipboard-set'
 alias pbpaste='$(termux-clipboard-get)'
 
-catc () {
-  cat $1 > $2
+catc() {
+  cat $1 >$2
 }
-catp () {
-  cat $1 >> $2
+catp() {
+  cat $1 >>$2
 }
 alias u='proot-distro login debian'
+alias uv='proot-distro login debian -- echo hello'
 
 alias postgres_setup='
 mkdir -p $PREFIX/var/lib/postgresql

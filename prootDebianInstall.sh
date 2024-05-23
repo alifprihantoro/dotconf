@@ -1,13 +1,21 @@
 apt update -y
 apt upgrade -y
 apt install chromium firefox-esr tigervnc-standalone-server tigervnc-common xfce4-terminal openbox jgmenu
+# install
+aria2c -x5 https://dl.pstmn.io/download/latest/linux_arm64 --out=postman.tar.gz
+tar -xvzf postman.tar.gz
+mv Postman .postman
+dr=/data/data/com.termux/files/home/
+dc=$dr/.myconf
+cd /usr/share/applications/
+ln -s $dc/desktop/*
 
 # setup configs
 mkdir .config
 cd .config
-ln -s /data/data/com.termux/files/home/.myconf/openbox/
-ln -s /data/data/com.termux/files/home/.myconf/xfce4/
-ln -s /data/data/com.termux/files/home/.config/nvim/
+ln -s $dc/openbox/
+ln -s $dc/xfce4/
+ln -s $dr/.config/nvim/
 
 # setup font
 cd

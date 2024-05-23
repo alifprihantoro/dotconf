@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Postman
+Exec=~/.postman/app/Postman %U
+Icon=/root/.postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+StartupWMClass=Postman
+StartupNotify=true
+Keywords=decelopment

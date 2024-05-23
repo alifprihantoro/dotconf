@@ -19,6 +19,15 @@ pkg install postgresql mariadb -y
 pkg install nodejs eslint golang rust php composer python python-pip -y
 npm i -g pnpm         # install pnpm
 pnpm i -g live-server # tools live server
+# install bun
+aria2c -x5 https://github.com/oven-sh/bun/releases/latest/download/bun-linux-aarch64.zip bun.zip
+unzip bun.zip
+mkdir -p ~/.bun/bin
+mv bun/bun ~/.bun/bin
+rm -rf bun
+echo '#!/bin/sh\ngrun ~/.bun/bin/bun' >~/../usr/bin/bun
+chmod +x ~/../usr/bin/bun
+
 # install wordpress
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
@@ -53,6 +62,7 @@ pnpm i -g pyright
 pnpm i -g @tailwindcss/language-server # tailwind lsp
 pnpm i -g @mdx-js/language-server      # mdx lsp
 pkg install lua-language-server -y     # lsp lua
+pkg install taplo -y
 # lsp rust
 git clone --depth=1 https://github.com/rust-lang/rust-analyzer.git
 cd rust-analyzer

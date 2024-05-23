@@ -15,12 +15,10 @@ alias rm='rm -rf'
 alias cp='cp -rf'
 alias cc='source ~/../usr/etc/profile && source ~/.zshrc && clear'
 alias tc='touch'
-# alias echo='shopt -s xpg_echo && echo'
 alias q='exit -y'
-#alias ubun='~/ubuntu/./su.sh'
 alias cdr='cd -'
-alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
-alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+alias wget='wget -c'                # Preferred 'wget' implementation (resume download)
+alias path='echo -e ${PATH//:/\\n}' # path:         Echo all executable Paths
 LIST_CMD+=('link folder => ln -s')
 LIST_CMD+=('help docs command => man')
 LIST_CMD+=('monitoring => top,htop,gtop')
