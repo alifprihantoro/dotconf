@@ -82,7 +82,6 @@ mv ~/go/bin/gopls ~/../usr/bin/
 pkg install stylua -y # lua
 pkg install shfmt -y  # bash
 pnpm i -g prettierd   # formatter
-echo '#!/bin/sh\necho "$(cat $1 | $PNPM_HOME/prettierd $1)"' >~/../usr/bin/astrofm
 chmod +x ~/../usr/bin/astrofm
 
 # go lsp linter
