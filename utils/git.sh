@@ -1,6 +1,6 @@
 # git commit
 alias gcm='git commit -am'
-function MYGSV(){
+function MYGSV() {
   DIRNOW=$(pwd)
   cdg
   ga .

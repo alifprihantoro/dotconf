@@ -1,10 +1,9 @@
 dr=$HOME/
 dc=$dr.myconf
 
-if [ `uname --operating-system` = "Android" ]; then
+if [ $(uname --operating-system) = "Android" ]; then
   source $dc/termux/alias.sh
 fi
-
 
 for sumber_dir in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh); do
   source $sumber_dir
@@ -70,3 +69,4 @@ esac
 # pnpm end
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin/
+# export PATH=$PATH:$HOME/.bun/bin/
