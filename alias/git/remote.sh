@@ -10,8 +10,13 @@ grus() {
   local getListRemote=$(git remote)
   local remoteName=$(echo $getListRemote | fzf)
   local getUrl=$(git remote get-url $remoteName)
-  local getSshUrl=$(echo $getUrl | sed 's/git@/ssh:\/\/git@/g' | sed 's/:/\//g')
-  git remote set-url $remoteName $getSshUrl
+  local isSshUrl=$(echo $getUrl | grep 'git@')
+  if [ -n "$isSshUrl" ]; then
+    echo 'youre already ssh url'
+  else
+    local getSshUrl=$(echo $getUrl | sed -e 's/https:\/\//git@/g' | sed -e 's/\//:/')
+    git remote set-url $remoteName $getSshUrl
+  fi
 }
 
 LIST_CMD+=('git open remote => grb')
@@ -19,7 +24,10 @@ grb() {
   local getListRemote=$(git remote)
   local remoteName=$(echo $getListRemote | fzf)
   local getUrl=$(git remote get-url $remoteName)
-  local changeSshUrl=$(echo $getUrl | sed 's/git@/ssh:\/\/git@/g' | sed 's/:/\//g')
+  local isSshUrl=$(echo $getUrl | grep 'git@')
+  if [ -n "$isSshUrl" ]; then
+    local changeSshUrl=$(echo $getUrl | sed 's/:/\//g' | sed -e 's/git@/https:\/\//g')
+  fi
   xdg-open $changeSshUrl
 }
 
