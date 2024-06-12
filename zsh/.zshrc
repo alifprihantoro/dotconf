@@ -5,9 +5,6 @@ if [ $(uname --operating-system) = "Android" ]; then
   source $dc/termux/alias.sh
 fi
 
-for sumber_dir in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh); do
-  source $sumber_dir
-done
 # for change dir whitout cd
 setopt auto_cd
 echo -ne "\033]12;#4a53f0\007" # color
@@ -70,3 +67,7 @@ esac
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin/
 # export PATH=$PATH:$HOME/.bun/bin/
+
+for GET_PATH in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh $dc/zsh/completion/*.zsh); do
+  source $GET_PATH
+done
