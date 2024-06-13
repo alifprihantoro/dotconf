@@ -5,6 +5,10 @@ gp() {
   local remoteName=$(echo $getListRemote | fzf)
   git push $remoteName $getCurrentBranch
 }
+gps() {
+  gssh
+  gp
+}
 LIST_CMD+=('git push all branch and remote => gpabr')
 function gpabr() {
   gssh
