@@ -71,3 +71,7 @@ export PATH=$PATH:$HOME/.cargo/bin/
 for GET_PATH in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh $dc/zsh/completion/*.zsh); do
   source $GET_PATH
 done
+# open tmux if not openened
+if [[ -z $TMUX ]]; then
+  tmux
+fi
