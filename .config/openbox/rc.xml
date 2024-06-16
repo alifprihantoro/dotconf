@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Velnias</name>
+    <name>Arc-Clone</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -293,9 +293,12 @@
         <command>firefox --display=:1</command>
       </action>
     </keybind>
-<keybind key="A-Up">
-  <action name="DirectionalalCycleWindows"><direction>north</direction><dialog>yes</dialog></action>
-</keybind>
+    <keybind key="A-Up">
+      <action name="DirectionalalCycleWindows">
+        <direction>north</direction>
+        <dialog>yes</dialog>
+      </action>
+    </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-j">
       <action name="NextWindow">

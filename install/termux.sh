@@ -1,5 +1,4 @@
-cd
-rm ../usr/etc/motd
+rm ~/../usr/etc/motd
 pkg update -y
 pkg upgrade -y
 # install cli tools
@@ -16,6 +15,14 @@ git config --global user.email "alifprihantoro@gmail.com"
 git config --global user.name "alifprihantoro"
 git config --global core.editor nvim
 git config --global init.defaultBranch
+# setup starter
+GET_PROFILE=$(cat ~/../usr/etc/profile)
+cat >~/../usr/etc/profile <<EOF
+dr=\$HOME/
+dc=\$dr.myconf
+source \$dc/termuxAlias.sh
+$GET_PROFILE
+EOF
 # install db
 pkg install postgresql mariadb -y
 # install language and related tools
@@ -36,16 +43,13 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 mv wp-cli.phar ~/../usr/bin/wp
 
-local r=.myconf
-rt=$r/tmux/
-# setup zsh
-chsh -s zsh
-ln -s $r/zsh/.zshrc
-# end zsh
-ln -s $r/bash/.bashrc
-ln -s $rt.tmux.conf
+local dc=~/.myconf
+rt=$dc/tmux/
+#add starter
+echo "tmux attach \; send-keys tmuxl C-m && exit" >~/../usr/etc/termux-login.sh
+ln -s $dc/home/.* ./ # link rc
+chsh -s zsh          # set default to zsh
 rm -rf .termux
-ln -s $r/termux
 mv termux .termux
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 tic -x $rt/xterm-256color-italic.terminfo

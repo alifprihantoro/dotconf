@@ -131,4 +131,7 @@ dist
 
 termux/shell
 .pnpm
-./.config/gh/hosts.yml
+.config/gh/hosts.yml
+.config/jgmenu/backup
+.config/jgmenu/append.csv
+.config/i3/bumblebee-status

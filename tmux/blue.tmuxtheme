@@ -47,9 +47,9 @@ set -gqF @themepack-window-status-current-format "#{@themepack-window-status-cur
 set -gqF @themepack-window-status-format "#{@themepack-window-status-prefix}#{@themepack-window-status-format}#{@themepack-window-status-suffix}"
 
 # Powerline color options
-set -goq @powerline-color-main-1 colour25
-set -goq @powerline-color-main-2 colour33
-set -goq @powerline-color-main-3 colour31
+set -goq @powerline-color-main-1 blue
+set -goq @powerline-color-main-2 green
+set -goq @powerline-color-main-3 yellow
 set -goq @powerline-color-black-1 black
 set -goq @powerline-color-grey-1 colour233
 set -goq @powerline-color-grey-2 colour235

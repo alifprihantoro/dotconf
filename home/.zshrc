@@ -1,10 +1,3 @@
-dr=$HOME/
-dc=$dr.myconf
-
-if [ $(uname --operating-system) = "Android" ]; then
-  source $dc/termux/alias.sh
-fi
-
 # for change dir whitout cd
 setopt auto_cd
 echo -ne "\033]12;#4a53f0\007" # color
@@ -29,7 +22,7 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
 # prom shell
 MYZSHPLUG=$dc/zsh/plugins
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source $dr/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $MYZSHPLUG/p10k.zsh ]] || source $MYZSHPLUG/p10k.zsh
 source $MYZSHPLUG/zsh-vi-mode.plugin.zsh
@@ -71,7 +64,3 @@ export PATH=$PATH:$HOME/.cargo/bin/
 for GET_PATH in $(find $dc/utils/**/*.sh $dc/alias/**/*.sh $dc/zsh/completion/*.zsh); do
   source $GET_PATH
 done
-# open tmux if not openened
-if [[ -z $TMUX ]]; then
-  tmux
-fi
