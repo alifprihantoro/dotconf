@@ -46,7 +46,7 @@ mv wp-cli.phar ~/../usr/bin/wp
 local dc=~/.myconf
 rt=$dc/tmux/
 #add starter
-echo "tmux attach \; send-keys tmuxl C-m && exit" >~/../usr/etc/termux-login.sh
+echo "tmux attach \; send-keys tmuxl C-m" >~/../usr/etc/termux-login.sh
 ln -s $dc/home/.* ./ # link rc
 chsh -s zsh          # set default to zsh
 rm -rf .termux
