@@ -73,6 +73,7 @@ main() {
   local CURRENT_WORKSPACE=\$(cat ~/.i3_current_workspace)
   local NEXT_WORKSPACE=\$((1 + \$CURRENT_WORKSPACE))
   i3 move container to workspace number \$NEXT_WORKSPACE
+  i3 workspace number \$NEXT_WORKSPACE
   echo \$NEXT_WORKSPACE >~/.i3_current_workspace
 }
 main
@@ -95,6 +96,7 @@ main() {
   local CURRENT_WORKSPACE=\$(cat ~/.i3_current_workspace)
   local NEXT_WORKSPACE=\$((\$CURRENT_WORKSPACE - 1))
   i3 move container to workspace number \$NEXT_WORKSPACE
+  i3 workspace number \$NEXT_WORKSPACE
   echo \$NEXT_WORKSPACE >~/.i3_current_workspace
 }
 main
@@ -108,6 +110,7 @@ echo \$1 >~/.i3_current_workspace
 EOF
 cat >/bin/i3MoveTo <<EOF
 #!/bin/bash
+i3 move container to workspace number \$1
 i3 workspace number \$1
 echo \$1 > ~/.i3_current_workspace
 EOF
