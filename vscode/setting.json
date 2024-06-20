@@ -19,42 +19,83 @@
         }
     ],
     "vim.normalModeKeyBindings": [
+        // buffer
+        {
+            "before": [
+                "leader",
+                "b"
+            ],
+            "when": [
+                "!activeEditorGroupEmpty"
+            ],
+            "commands": [
+                "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+            ]
+        },
+        // file tree
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        // rename file
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "f"
+            ],
+            "commands": [
+                "fileutils.renameFile"
+            ]
+        },
+        // find file regex
+        {
+            "before": [
+                "f",
+                "g"
+            ],
+            "commands": [
+                "workbench.view.search"
+            ]
+        },
+        // find file
+        {
+            "before": [
+                "f",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        // format
+        {
+            "before": [
+                "<C-f>"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            "before": [
+                "da"
+            ],
+            "after": [
+                "ggVGd"
+            ]
+        },
         {
             "before": [
                 ";"
             ],
             "after": [
                 ":"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "after": [
-                "1",
-                "0",
-                "k"
-            ]
-        },
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "after": [
-                "1",
-                "0",
-                "j"
-            ]
-        },
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "after": [
-                "1",
-                "0",
-                "j"
             ]
         },
         {
@@ -141,9 +182,11 @@
     "vim.leader": "<space>",
     "vim.handleKeys": {
         "<C-a>": false,
-        "<C-f>": false,
         "<C-Space>": false,
-        "<C-b>": false
+        "<C-b>": false,
+        "<C-f>": false,
+        "<C-e>": false,
+        "<C-Shift-p>": false,
     },
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -167,10 +210,14 @@
     "vim.statusBarColors.surroundinputmode": "#007ACC",
     "files.autoSave": "off",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#007ACC",
-        "statusBar.noFolderBackground": "#007ACC",
-        "statusBar.debuggingBackground": "#007ACC",
+        "statusBar.background": "#B48EAD",
+        "statusBar.noFolderBackground": "#B48EAD",
+        "statusBar.debuggingBackground": "#B48EAD",
         "statusBar.foreground": "#434C5E",
         "statusBar.debuggingForeground": "#434C5E"
-    }
+    },
+    "window.menuBarVisibility": "compact",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "none"
 }
