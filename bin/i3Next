@@ -1,0 +1,14 @@
+#!/bin/bash
+
+main() {
+  local CURRENT_WORKSPACE=$(cat ~/.i3/current_workspace)
+  local TOTAL_WORKSPACE=$(cat ~/.i3/total_workspace)
+  local NEXT_WORKSPACE=$((1 + $CURRENT_WORKSPACE))
+  i3 workspace number $NEXT_WORKSPACE
+  if [[ "$TOTAL_WORKSPACE" -lt "$NEXT_WORKSPACE" ]]; then
+    echo "hello"
+    echo $NEXT_WORKSPACE >~/.i3/total_workspace
+  fi
+  echo $NEXT_WORKSPACE >~/.i3/current_workspace
+}
+main

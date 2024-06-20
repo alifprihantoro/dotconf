@@ -1,0 +1,15 @@
+#!/bin/bash
+main() {
+  local CURRENT_WORKSPACE=$(cat ~/.i3/current_workspace)
+  local TOTAL_WORKSPACE=$(cat ~/.i3/total_workspace)
+  local NEXT_WORKSPACE=$(($CURRENT_WORKSPACE - 1))
+  if [[ "$NEXT_WORKSPACE" -lt 1 ]]; then
+    echo "lower than"
+    i3 workspace number $TOTAL_WORKSPACE
+    echo $TOTAL_WORKSPACE >~/.i3/current_workspace
+  else
+    i3 workspace number $NEXT_WORKSPACE
+    echo $NEXT_WORKSPACE >~/.i3/current_workspace
+  fi
+}
+main

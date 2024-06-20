@@ -1,0 +1,8 @@
+#!/bin/bash
+local TOTAL_WORKSPACE=$(cat ~/.i3/total_workspace)
+i3 move container to workspace number $1
+i3 workspace number $1
+if [["$TOTAL_WORKSPACE" -gt "$1" ]]; then
+  echo $1 >~/.i3/total_workspace
+fi
+echo $1 >~/.i3/current_workspace
