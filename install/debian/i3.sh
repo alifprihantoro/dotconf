@@ -1,11 +1,12 @@
 apt update -y
 apt upgrade -y
 apt install i3 -y
+# use pip/python if not in apt
+apt install python3-i3ipc
 # delete not used appj
 apt remove xfce4-terminal -y
 apt autoremove
 apt autoclean
-
 # WARNING: change this to root directory
 dr=/data/data/com.termux/files/home/
 dc=$dr/.myconf

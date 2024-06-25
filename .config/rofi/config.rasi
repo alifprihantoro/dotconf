@@ -1,0 +1,19 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ *
+ * Configuration For Rofi Version: 1.7.3
+ * url : https://github.com/adi1090x/rofi
+ **/
+
+configuration {
+  kb-remove-to-eol: "";
+  kb-accept-entry:"Return";
+  kb-row-up: "Control+k,Up";
+  kb-row-down: "Control+j,Down";
+  kb-cancel: "Control+c,Escape";
+  kb-secondary-copy: "";
+}
+
+@theme "theme.rasi"

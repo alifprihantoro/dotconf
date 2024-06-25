@@ -270,15 +270,20 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
+    <keybind key="A-S-r">
+      <action name="Execute">
+        <command>openbox --restart</command>
+      </action>
+    </keybind>
     <keybind key="A-s">
       <action name="Execute">
-        <command>jgmenu_run</command>
+        <command>rofi -drun-use-desktop-cache -show drun -refilter-timeout-limit</command>
       </action>
     </keybind>
     <!-- terminal -->
-    <keybind key="A-t">
+    <keybind key="A-Return">
       <action name="Execute">
-        <command>xfce4-terminal</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <!-- chrome -->

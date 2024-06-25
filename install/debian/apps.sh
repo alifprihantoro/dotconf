@@ -1,26 +1,22 @@
-apt update -y
-apt upgrade -y
-apt install wget chromium firefox-esr tigervnc-standalone-server tigervnc-common kitty lxappearance thunar -y
+apt-get update -y
+apt-get upgrade -y
+apt-get install wget chromium firefox-esr tigervnc-standalone-server tigervnc-common kitty lxappearance thunar -y
 # install
 aria2c -x5 https://dl.pstmn.io/download/latest/linux_arm64 --out=postman.tar.gz
 tar -xvzf postman.tar.gz
 mv Postman .postman
-# setup chrome for default using no sandbox
-local CHROME_BIN=$(cat /bin/chromium)
-local CHROME_DELETE_FIRST_LINE=$(echo $CHROME_BIN | sed '1d')
-local RESULT_CHROME=$(echo "
+setup chrome for default using no sandbox
+mv /bin/chromium /bin/chromium_real
+touch /bin/chromium
+chmod +x /bin/chromium
+cat >/bin/chromium <<EOF
 #!/bin/bash
-main(){
-  $CHROME_DELETE_FIRST_LINE
-}
-local checkIsRoot=\$(id -u)
-if [[ \$checkIsRoot -ne 0 ]]; then
-  main
+if [[ \$(id -u) -ne 0 ]]; then
+  /bin/chromium_real $@
 else
-  main --no-sandbox
+  /bin/chromium_real --no-sandbox $@
 fi
-")
-echo $RESULT_CHROME >/bin/chromium
+EOF
 # install postman
 aria2c -x5 https://dl.pstmn.io/download/latest/linux_arm64 --out=postman.tar.gz
 tar -xvzf postman.tar.gz
@@ -38,3 +34,7 @@ apt update && apt install codium
 
 # add/rewrite desktop info
 ln -sf $dc/desktop/* /usr/share/applications/
+
+# rofi dmenu
+apt-get install rofi -y
+git clone --depth=1 https://github.com/adi1090x/rofi.git
