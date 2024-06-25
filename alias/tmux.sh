@@ -1,5 +1,6 @@
-alias tmuxa='tmux attach'
-alias tmuxk='tmux kill-server'
+alias t='tmux'
+alias ta='tmux attach'
+alias tks='tmux kill-server'
 export TMUX_PWD=$HOME
 # args 1 => name window
 # args 2 => cmd execute
@@ -48,7 +49,7 @@ tmuxweb() {
   eval $ARGS
 }
 
-tmuxl() {
+tl() {
   local LIST_TMUX=$(printf '%s\n' "${LIST_TMUX[@]}")
   eval $(echo $LIST_TMUX | fzf | sed 's/.*=> //')
 }

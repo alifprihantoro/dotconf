@@ -12,7 +12,7 @@ vfe() {
 }
 LIST_CMD+=('fzf cd folder => cf')
 cf() {
-  local list_dir=$(find . -maxdepth 1 -type d -name "*" -print)
+  local list_dir=$(find . -maxdepth 1 -type d,l -name "*" -print)
   local cd_w_fzf=$(echo -e "$list_dir\n.." | fzf)
   if [ ! -z "$cd_w_fzf" ]; then
     if [ "$cd_w_fzf" = "." ]; then
