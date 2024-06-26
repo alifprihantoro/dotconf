@@ -28,11 +28,11 @@ alias cfpp='cfp && cf'
 LIST_CMD+=('cfp then cf => cfpp')
 # split with ' => '
 cfp() {
-  # transform array to string
-  LIST_PROJECT=$(printf '%s\n' "${LIST_PROJECT[@]}")
-  local DIR=$(echo "$LIST_PROJECT" | fzf | awk -F' => ' '{print $2}')
+  # sed change path $HOME to ''
+  local LIST=$(printf '%s\n' "${LIST_PROJECT[@]}" | sed "s#$HOME//##g")
+  local DIR=$(echo "$LIST" | fzf | awk -F' => ' '{print $2}')
   if [ ! -z "$DIR" ]; then
-    local CMD="cd $DIR"
+    local CMD="cd $HOME/$DIR"
     addHistory $CMD
     eval $CMD
   fi
