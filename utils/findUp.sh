@@ -1,7 +1,7 @@
 findUp() {
   local x=$(pwd)
   while [ "$x" != "/" ]; do
-    if [ -f "$x/$1" ] && [ -d "$x/.git" ]; then
+    if [ -f "$x/$1" ] && [[ -d "$x/.git" || $2 == "true" ]]; then
       break
     fi
     if [ -d "$x/.git" ]; then

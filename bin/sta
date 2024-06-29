@@ -1,0 +1,9 @@
+#!/bin/bash
+local OPTION_USER=$(echo "i3\nopenbox\nawesome" | fzf)
+if [ ! -z $OPTION_USER ]; then
+  rm -r .vnc/:*
+  rm -r .vnc/loc*
+  rm -r /tmp/.*
+  echo $OPTION_USER >$HOME/.vnc/xstartup
+  vncserver -geometry 1640x720
+fi

@@ -33,4 +33,5 @@ LIST_PROJECT=(
   "lab => $dp/lab"
   "learn => $dp/learn"
   "content => $dw/alifprihantoro/contents"
+  "quest => $dw/quest"
 )
