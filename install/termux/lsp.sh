@@ -43,3 +43,5 @@ mv ~/go/bin/golangci-lint-langserver ~/../usr/bin/
 # go linter
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 mv ~/go/bin/golangci-lint ~/../usr/bin/
+# markdown blockquote
+cargo install cbfmt
