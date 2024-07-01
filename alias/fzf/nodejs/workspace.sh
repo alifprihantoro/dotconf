@@ -5,7 +5,8 @@ goToWorkspaceNpm() {
   local OBJ=$3
   local GET_JSON=$(eval $(echo "yq \"((.${OBJ}[]) |= \\\"$ROOT_DIR/\\\" + . +\\\"/\\\") | .${OBJ}[]\" $ROOT_DIR/$FILE_NAME -o yaml"))
   local LIST_YML=$(echo $GET_JSON | tr '\n' ' ')
-  local USER_SELECT=$(echo "${$(eval ls -d $LIST_YML)//$ROOT_DIR}" | tr '  ' '\n' | tr ' ' '\n' | fzf)
+  local WORKSPACE_LIST=$(eval ls -d "$LIST_YML" | sed "s|$ROOT_DIR||")
+  local USER_SELECT=$(echo $WORKSPACE_LIST | tr '  ' '\n' | tr ' ' '\n' | fzf)
   if [ ! -z "$USER_SELECT" ]; then
     cd $ROOT_DIR/$USER_SELECT
   fi
