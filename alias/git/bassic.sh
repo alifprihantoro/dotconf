@@ -37,3 +37,4 @@ alias gbl='echo "$(git branch -l)"' # branch list
 
 # git add
 alias ga='git add'
+alias gaa='git add'

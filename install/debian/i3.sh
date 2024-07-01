@@ -7,11 +7,12 @@ apt install python3-i3ipc
 apt remove xfce4-terminal -y
 apt autoremove
 apt autoclean
-# WARNING: change this to root directory
-dr=/data/data/com.termux/files/home/
-dc=$dr/.myconf
 ln -sf $dc/bin/* /bin/
-source $dc/install/debian/apps.sh
+if [ "$INSTALL_FULL" == "y" ]; then
+  source $dc/install/debian/installFull.sh
+else
+  source $dc/install/debian/installMin.sh
+fi
 source $dc/install/debian/configs.sh
 
 # setup themes

@@ -1,5 +1,7 @@
+read -p "is use pacman ? (Y/n): " isUsePacman
 rm ~/../usr/etc/motd
 source $dc/install/termux/app.sh
+source $dc/install/apps.sh
 echo "tmux" >~/../usr/etc/termux-login.sh
 
 # setup starter
