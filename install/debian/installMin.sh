@@ -5,7 +5,8 @@ apt-get install wget chromium firefox-esr tigervnc-standalone-server tigervnc-co
 aria2c -x5 https://dl.pstmn.io/download/latest/linux_arm64 --out=postman.tar.gz
 tar -xvzf postman.tar.gz
 mv Postman .postman
-if [ "$isTermuxProot" == "true" ]; then
+if [ "$isTermuxProot" != "y" ]; then
+  # chromium
   mv /bin/chromium /bin/chromium_real
   touch /bin/chromium
   chmod +x /bin/chromium
@@ -15,6 +16,18 @@ if [[ \$(id -u) -ne 0 ]]; then
   /bin/chromium_real $@
 else
   /bin/chromium_real --no-sandbox $@
+fi
+EOF
+  # brave
+  mv /bin/brave-browser-stable /bin/brave-browser-stable-bin
+  touch /bin/brave-browser-stable
+  chmod +x /bin/brave-browser-stable
+  cat >/bin/brave-browser-stable <<EOF
+#!/bin/bash
+if [[ \$(id -u) -ne 0 ]]; then
+  /bin/brave-browser-stable $@
+else
+  /bin/brave-browser-stable-bin --no-sandbox $@
 fi
 EOF
 fi
