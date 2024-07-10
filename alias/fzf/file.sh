@@ -35,6 +35,7 @@ cfp() {
     local CMD="cd $HOME/$DIR"
     addHistory $CMD
     eval $CMD
+    cf
   fi
 }
 LIST_CMD+=('fzf list git => cfg')
