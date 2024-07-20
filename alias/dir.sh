@@ -20,18 +20,9 @@ alias dw='cd $dw'
 alias dm='cd $dm'
 alias dvc='cd $dvc'
 alias dvp='cd $dvp'
-LIST_PROJECT=(
-  "Muryp => $dm"
-  "public project => $dp/public"
-  "nvim git => $dp/public/nvim-muryp-git"
-  "router dom => $dp/public/router-dom"
-  "notes => $dp/notes"
-  "nvim md => $dp/public/nvim-muryp-md"
-  "daily project => $dp/daily"
-  "lazy nvim => $dv/lazy"
-  "alifprihantoro => $dw/alifprihantoro"
-  "lab => $dp/lab"
-  "learn => $dp/learn"
-  "content => $dw/alifprihantoro/contents"
-  "quest => $dw/quest"
-)
+LIST_CMD+=('add folder bookmark => addFolder <name>')
+addFolder() {
+  local NAME=$1
+  local CURR_PATH=$(pwd)
+  echo "$NAME => $CURR_PATH" >>$HOME/.muryp/LIST_PROJECT
+}

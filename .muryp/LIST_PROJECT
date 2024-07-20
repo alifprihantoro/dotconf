@@ -1,0 +1,14 @@
+public project => /data/data/com.termux/files/home//project/public
+nvim git => /data/data/com.termux/files/home//project/public/nvim-muryp-git
+router dom => /data/data/com.termux/files/home//project/public/router-dom
+notes => /data/data/com.termux/files/home//project/notes
+nvim md => /data/data/com.termux/files/home//project/public/nvim-muryp-md
+daily project => /data/data/com.termux/files/home//project/daily
+lazy nvim => /data/data/com.termux/files/home//.config/nvim/lazy
+alifprihantoro => /data/data/com.termux/files/home//project/web/alifprihantoro
+lab => /data/data/com.termux/files/home//project/lab
+learn => /data/data/com.termux/files/home//project/learn
+content => /data/data/com.termux/files/home//project/web/alifprihantoro/contents
+quest => /data/data/com.termux/files/home//project/web/quest
+configqu => /data/data/com.termux/files/home/.myconf
+
