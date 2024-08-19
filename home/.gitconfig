@@ -5,3 +5,5 @@
 	name = alifprihantoro
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
