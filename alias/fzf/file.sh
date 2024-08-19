@@ -29,7 +29,8 @@ LIST_CMD+=('cfp then cf => cfpp')
 # split with ' => '
 cfp() {
   # sed change path $HOME to ''
-  local LIST=$(cat $HOME/.muryp/LIST_PROJECT | sed "s#$HOME//##g")
+  local LIST=$(cat $HOME/.muryp/LIST_PROJECT | sed "s#$HOME/##g")
+  echo $LIST
   local DIR=$(echo "$LIST" | fzf | awk -F' => ' '{print $2}')
   if [ ! -z "$DIR" ]; then
     local CMD="cd $HOME/$DIR"
