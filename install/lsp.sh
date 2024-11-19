@@ -1,3 +1,5 @@
+# neotree treesitter cli
+pnpm i -g tree-sitter-cli
 # setup neovim
 luarocks install luacheck
 # install lsp
@@ -13,6 +15,7 @@ pnpm i -g bash-language-server         # bash lsp
 pnpm i -g pyright
 pnpm i -g @tailwindcss/language-server # tailwind lsp
 pnpm i -g @mdx-js/language-server      # mdx lsp
+pnpm i -g eslint_d
 # lsp rust
 git clone --depth=1 https://github.com/rust-lang/rust-analyzer.git
 cd rust-analyzer
@@ -29,7 +32,7 @@ go install golang.org/x/tools/gopls@latest
 mv ~/go/bin/gopls ~/../usr/bin/
 
 # install formatter
-pnpm i -g prettierd # formatter
+pnpm i -g @fsouza/prettierd # formatter
 chmod +x ~/../usr/bin/astrofm
 
 # go lsp linter

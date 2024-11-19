@@ -23,10 +23,7 @@ cf() {
     fi
   fi
 }
-LIST_CMD+=('find project => cfp')
-alias cfpp='cfp && cf'
-LIST_CMD+=('cfp then cf => cfpp')
-# split with ' => '
+LIST_CMD+=('find project then find folder fzf => cfp')
 cfp() {
   # sed change path $HOME to ''
   local LIST=$(cat $HOME/.muryp/LIST_PROJECT | sed "s#$HOME/##g")
