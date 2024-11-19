@@ -8,7 +8,10 @@ lazy nvim => /data/data/com.termux/files/home//.config/nvim/lazy
 alifprihantoro => /data/data/com.termux/files/home//project/web/alifprihantoro
 lab => /data/data/com.termux/files/home//project/lab
 learn => /data/data/com.termux/files/home//project/learn
-content => /data/data/com.termux/files/home//project/web/alifprihantoro/contents
 quest => /data/data/com.termux/files/home//project/web/quest
-configqu => /data/data/com.termux/files/home/.myconf
-
+configqu => /data/data/com.termux/files/home/.myconfmuryp-file.nvim => /data/data/com.termux/files/home/.config/nvim/lazy/muryp-file.nvim
+muryp-file.nvim => /data/data/com.termux/files/home/.config/nvim/lazy/muryp-file.nvim
+sosmed => /data/data/com.termux/files/home/project/web/sosmed
+pawarta tech => /data/data/com.termux/files/home/project/web/pawartatech
+content => /data/data/com.termux/files/home/project/contents
+serabi => /data/data/com.termux/files/home/project/web/serabi
