@@ -1,15 +1,5 @@
-# install fzf latest
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# instal latest nvim
-sudo add-apt-repository ppa:neovim-ppa/stable -y
-sudo apt update
-sudo apt install neovim
-
-# install powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+dr=~/
+dc=$dr/.myconf
 #setup rc
 cd
 cat >~/.zshrc <<EOF
@@ -18,6 +8,17 @@ export dc=$dr/.myconf
 source $dc/home/.zshrc
 EOF
 chmod +x ~/.zshrc
+# install fzf latest
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# instal latest nvim
+wget https://github.com/neovim/neovim-releases/releases/download/v0.10.2/nvim-linux64.deb
+sudo dpkg --install nvim-linux64.deb
+
+# install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 # setup configs
 # WARNING: DELETE NOT USED CONFIG
 mkdir .config
