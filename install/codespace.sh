@@ -18,3 +18,7 @@ ln -s $dc/home/.* ~/
 aria2c -x5 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 unzip FiraCode .fonts/firacode
 fc-cache -fv
+
+# neovim conf
+mv $HOME/.config/nvim $HOME/.config/nvim.bak
+git clone https://github.com/muryp/nvim-conf-lua --depth=1 $HOME/.config/nvim
