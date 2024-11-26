@@ -1,8 +1,8 @@
 [alias]
 	pushall = !git remote | xargs -L1 git push --all
 [user]
-	email = alifprihantoro@gmail.com
-	name = alifprihantoro
+	email = aliefprihantoro@gmail.com
+	name = aliefprihantoro
 [core]
 	editor = nvim
 [init]
